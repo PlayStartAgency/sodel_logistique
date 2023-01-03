@@ -22,7 +22,7 @@ class DashboardController extends AbstractDashboardController
         setController(OrdersCrudController::class)
         ->generateUrl();
         
-        return $this->redirect($url);
+        //return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());
 
     }
 
