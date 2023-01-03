@@ -9,7 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use phpDocumentor\Reflection\Types\Boolean;
 
 class OrdersCrudController extends AbstractCrudController
@@ -28,10 +27,10 @@ class OrdersCrudController extends AbstractCrudController
             ArrayField::new('fournisseur'),
             DateTimeField::new('date_cmd'),
             DateTimeField::new('date_rcp'),
-            TextField::new('article'),
-            TextField::new('designation'),
-            NumberField::new('qte_cmd_uom'),
-            NumberField::new('unite_cmd'),
+            string::new('article'),
+            string::new('designation'),
+            string::new('qte_cmd_uom'),
+            string::new('unite_cmd'),
         ];
     }
     

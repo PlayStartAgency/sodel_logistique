@@ -39,8 +39,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::section('Acceuil' ,'fa fa-home');
         yield MenuItem::linkToCrud('Passer une Commande', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW);
-        yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-list', Orders::class);
-        yield MenuItem::linkToCrud('Liste des Fournisseurs', 'fas fa-adress',Fournisseurs::class);
-        yield MenuItem::linkToCrud('Ajouter un Fournisseurs', 'fas fa-add',Fournisseurs::class)->setAction(Crud::PAGE_NEW);
+        yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-lit', Orders::class);
+        yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-lit',Fournisseurs::class);
     }
 }

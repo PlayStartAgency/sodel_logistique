@@ -40,7 +40,8 @@ class Orders
     #[ORM\Column(length: 255)]
     private ?string $unite_cmd = null;
 
-    
+    #[ORM\Column(length: 255)]
+    private ?string $ville = null;
 
     public function __construct()
     {
@@ -160,7 +161,15 @@ class Orders
         return $this;
     }
 
-   
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
 
-   
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
 }

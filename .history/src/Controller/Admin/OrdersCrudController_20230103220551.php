@@ -24,7 +24,7 @@ class OrdersCrudController extends AbstractCrudController
     {
         return [
            
-            NumberField::new('numero_cmd'),
+            NumberField::new('numero de commande'),
             ArrayField::new('fournisseur'),
             DateTimeField::new('date_cmd'),
             DateTimeField::new('date_rcp'),

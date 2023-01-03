@@ -160,7 +160,15 @@ class Orders
         return $this;
     }
 
-   
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
 
-   
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
 }

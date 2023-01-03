@@ -39,10 +39,17 @@ class Fournisseurs
     #[ORM\ManyToMany(targetEntity: Orders::class, mappedBy: 'fournisseur_name')]
     private Collection $orders_obj;
 
+    #[ORM\ManyToMany(targetEntity: Orders::class, mappedBy: 'fournisseur')]
+    private Collection $fournisseurs_orders;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Ville = null;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
         $this->orders_obj = new ArrayCollection();
+        $this->fournisseurs_orders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -175,6 +182,45 @@ class Fournisseurs
         if ($this->orders_obj->removeElement($ordersObj)) {
             $ordersObj->removeFournisseurName($this);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Orders>
+     */
+    public function getFournisseursOrders(): Collection
+    {
+        return $this->fournisseurs_orders;
+    }
+
+    public function addFournisseursOrder(Orders $fournisseursOrder): self
+    {
+        if (!$this->fournisseurs_orders->contains($fournisseursOrder)) {
+            $this->fournisseurs_orders->add($fournisseursOrder);
+            $fournisseursOrder->addFournisseur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFournisseursOrder(Orders $fournisseursOrder): self
+    {
+        if ($this->fournisseurs_orders->removeElement($fournisseursOrder)) {
+            $fournisseursOrder->removeFournisseur($this);
+        }
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->Ville;
+    }
+
+    public function setVille(string $Ville): self
+    {
+        $this->Ville = $Ville;
 
         return $this;
     }

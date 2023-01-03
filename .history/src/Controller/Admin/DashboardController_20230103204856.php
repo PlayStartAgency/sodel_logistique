@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Fournisseurs;
 use App\Entity\Orders;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -38,9 +37,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::section('Acceuil' ,'fa fa-home');
-        yield MenuItem::linkToCrud('Passer une Commande', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW);
-        yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-list', Orders::class);
-        yield MenuItem::linkToCrud('Liste des Fournisseurs', 'fas fa-adress',Fournisseurs::class);
-        yield MenuItem::linkToCrud('Ajouter un Fournisseurs', 'fas fa-add',Fournisseurs::class)->setAction(Crud::PAGE_NEW);
+       yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-list', Orders::class);
+        yield MenuItem::linkToCrud('Passer une Commande','fas fa-plus', Orders::class);
+
+        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }
