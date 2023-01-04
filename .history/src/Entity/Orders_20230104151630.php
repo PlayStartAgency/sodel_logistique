@@ -161,7 +161,8 @@ class Orders
         return $this;
     }
 
-  
+    public static function createChoiceLabel(object $fournisseur): string    {        
+        return (string) $fournisseur;    }
     public function __toString()
     {
         return $this->fournisseur;

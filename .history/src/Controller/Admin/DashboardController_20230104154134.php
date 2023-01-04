@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Fournisseurs;
 use App\Entity\Orders;
-use App\Entity\Users;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -35,19 +34,15 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
             ->setTitle('Sodel Logistique')
-            ->renderContentMaximized()
-            ->setLocales(['fr', 'en'])
-            ;
+            ->renderContentMaximized();
     }
 
-    public function configureMenuItems(): iterable
+   /* public function configureMenuItems(): iterable
     {
         yield MenuItem::section('Acceuil' ,'fa fa-home');
         yield MenuItem::linkToCrud('Passer une Commande', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW);
         yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-list', Orders::class);
         yield MenuItem::linkToCrud('Liste des Fournisseurs', 'fas fa-address-book',Fournisseurs::class);
         yield MenuItem::linkToCrud('Ajouter un Fournisseurs', 'fas fa-user-plus',Fournisseurs::class)->setAction(Crud::PAGE_NEW);
-        yield MenuItem::linkToCrud('Liste des Utilisateurs', 'fas fa-user',Users::class);
-        yield MenuItem::linkToCrud('Ajouter un Utilisateur', 'fas fa-user-plus',Users::class)->setAction(Crud::PAGE_NEW);
-    }
+    }*/
 }

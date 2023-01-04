@@ -18,11 +18,6 @@ class FournisseursCrudController extends AbstractCrudController
         
     }
 
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-        ->setEntityLabelInPlural('Liste des Fournisseurs');
-    }
     
     public function configureFields(string $pageName): iterable
     {

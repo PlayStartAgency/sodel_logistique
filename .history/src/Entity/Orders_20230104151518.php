@@ -161,10 +161,10 @@ class Orders
         return $this;
     }
 
-  
+   
     public function __toString()
     {
-        return $this->fournisseur;
+        return $this->sct_name;
     }
    
 }
