@@ -33,7 +33,5 @@ class FournisseursCrudController extends AbstractCrudController
             
         ];
     }
-
     
 }
-

@@ -31,7 +31,7 @@ class OrdersCrudController extends AbstractCrudController
             NumberField::new('numero_cmd'),
            AssociationField::new('fournisseur'),
             DateTimeField::new('date_cmd'),
-            DateTimeField::new('date_rcp'),
+            DateTimeField::new('Date_rcp'),
             TextField::new('article'),
             TextField::new('designation'),
             NumberField::new('qte_cmd_uom'),
@@ -39,6 +39,14 @@ class OrdersCrudController extends AbstractCrudController
         ];
     }
 
+   public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        if (!$entityInstance instanceof Orders) return;
 
+        $entityInstance->setdate_cmd(new \DateTimeImmutable);
+
+        parent::persistEntity($em, $entityInstance);
+
+    }
     
 }

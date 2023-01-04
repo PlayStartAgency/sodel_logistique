@@ -14,7 +14,7 @@ class FournisseursCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Fournisseurs::class;
-        
+        return Orders::class;
     }
 
    
@@ -33,7 +33,5 @@ class FournisseursCrudController extends AbstractCrudController
             
         ];
     }
-
     
 }
-

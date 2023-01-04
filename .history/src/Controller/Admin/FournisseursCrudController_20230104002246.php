@@ -34,6 +34,15 @@ class FournisseursCrudController extends AbstractCrudController
         ];
     }
 
+    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance)
+    {
+        if (!$entityInstance instanceof Fournisseurs) return;
+
+        $entityInstance->setname_sct(new \sanitize_text_field( $str:string ));
+
+        parent::persistEntity($em, $entityInstance);
+
+    }
     
 }
 

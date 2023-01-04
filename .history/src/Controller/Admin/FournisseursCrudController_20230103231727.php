@@ -14,10 +14,8 @@ class FournisseursCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Fournisseurs::class;
-        
     }
 
-   
     
     public function configureFields(string $pageName): iterable
     {
@@ -33,7 +31,5 @@ class FournisseursCrudController extends AbstractCrudController
             
         ];
     }
-
     
 }
-

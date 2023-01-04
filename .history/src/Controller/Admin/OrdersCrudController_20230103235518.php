@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Orders;
 use App\Entity\Fournisseurs;
 use DateTime;
-use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -38,7 +37,5 @@ class OrdersCrudController extends AbstractCrudController
             NumberField::new('unite_cmd'),
         ];
     }
-
-
     
 }

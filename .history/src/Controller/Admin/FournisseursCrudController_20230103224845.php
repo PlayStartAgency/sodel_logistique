@@ -14,26 +14,22 @@ class FournisseursCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Fournisseurs::class;
-        
     }
 
-   
     
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('name_sct'),
-            TextField::new('rcs'),
+            TextField::new('fournisseurs_orders'),
+             TextField::new('rcs'),
             EmailField::new('Email'),
             TelephoneField::new('tel'),
             TextField::new('adresse'),
             TextField::new('cp'),
-            TextField::new('ville')->setRequired(true),
+            TextField::new('ville'),
             
         ];
     }
-
     
 }
-

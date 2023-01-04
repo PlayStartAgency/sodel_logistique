@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Orders;
 use App\Entity\Fournisseurs;
 use DateTime;
-use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -29,7 +28,9 @@ class OrdersCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             NumberField::new('numero_cmd'),
-           AssociationField::new('fournisseur'),
+           AssociationField::new('fournisseur')->setQueryBuilder(function(QueryBuilder $queryBuilder){
+            $queryBuilder->where('entity.active = true';
+           }),
             DateTimeField::new('date_cmd'),
             DateTimeField::new('date_rcp'),
             TextField::new('article'),
@@ -38,7 +39,5 @@ class OrdersCrudController extends AbstractCrudController
             NumberField::new('unite_cmd'),
         ];
     }
-
-
     
 }

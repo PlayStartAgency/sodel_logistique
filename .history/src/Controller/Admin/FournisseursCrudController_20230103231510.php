@@ -14,10 +14,8 @@ class FournisseursCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Fournisseurs::class;
-        
     }
 
-   
     
     public function configureFields(string $pageName): iterable
     {
@@ -29,11 +27,9 @@ class FournisseursCrudController extends AbstractCrudController
             TelephoneField::new('tel'),
             TextField::new('adresse'),
             TextField::new('cp'),
-            TextField::new('ville')->setRequired(true),
+            TextField::new('ville'),
             
         ];
     }
-
     
 }
-

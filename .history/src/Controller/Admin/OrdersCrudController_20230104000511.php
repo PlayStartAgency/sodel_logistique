@@ -39,6 +39,11 @@ class OrdersCrudController extends AbstractCrudController
         ];
     }
 
+    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        if (!$entityInstance instanceof Orders) return;
 
+        $entityInstance->setdate_rcp(new \DateTimeImmutable());
+    }
     
 }

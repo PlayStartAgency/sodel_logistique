@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\OrdersRepository;
-use App\Repository\FournisseurRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -164,7 +163,7 @@ class Orders
    
     public function __toString()
     {
-        return $this->$sct_name;
+        return $this->name;
     }
    
 }

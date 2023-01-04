@@ -7,7 +7,6 @@ use App\Entity\Orders;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Dto\LocaleDto;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use  EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,6 +41,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Passer une Commande', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW);
         yield MenuItem::linkToCrud('Liste des Commandes', 'fas fa-list', Orders::class);
         yield MenuItem::linkToCrud('Liste des Fournisseurs', 'fas fa-address-book',Fournisseurs::class);
-        yield MenuItem::linkToCrud('Ajouter un Fournisseurs', 'fas fa-user-plus',Fournisseurs::class)->setAction(Crud::PAGE_NEW);
+        yield MenuItem::linkToCrud('Ajouter un Fournisseurs', 'fas fa-add',Fournisseurs::class)->setAction(Crud::PAGE_NEW);
     }
 }
